@@ -351,286 +351,287 @@ Describa las decisiones y acciones que se tomaron para abordar los problemas de 
 
 Recuerde que algunos campos pueden ser irrelevantes para los objetivos de la minería de datos y, por lo tanto, el ruido en esos campos no tiene importancia. Sin embargo, si el ruido se ignora por estas razones, debe documentarse completamente, ya que las circunstancias pueden cambiar más tarde.
 
-## Construct Data
-This task includes constructive data preparation operations such as the production of derived attributes, complete new records, or transformed values for existing attributes.
+## Construcción de datos
+Esta tarea incluye operaciones constructivas de preparación como la producción de atributos derivados, registros nuevos o valores transformados para atributos existentes.
 
-* Check available construction mechanisms with the list of tools suggested for the project
-* Decide whether it is best to perform the construction inside the tool or outside (i.e., which is more efficient, exact, repeatable)
-* Reconsider Data Selection Criteria Data Selection Criteria in light of experiences of data construction (i.e., you may wish include/exclude other sets of data)
+* Revisar los mecanismos de construcción disponibles con la lista de herramientas sugeridas para el proyecto.
+* Decidir si es mejor realizar la construcción dentro o fuera de la herramienta (es decir, cuál es más eficiente, exacta, repetible).
+* Reconsiderar los criterios de selección de datos a la luz de las experiencias de construcción de datos (es decir, puede incluir o excluir otros conjuntos de datos).
 
-### Derived Attributes
-Derived attributes are new attributes that are constructed from one or more existing attributes in the same record. An example might be: area = length * width.
+### Atributos derivados
+Los atributos derivados son atributos nuevos que se construyen a partir de uno o más atributos existentes en el mismo registro. Un ejemplo podría ser: área = longitud * anchura.
 
-Why should we need to construct derived attributes during the course of a data mining investigation? It should not be thought that only data from databases or other sources should be used in constructing a model. Derived attributes might be constructed because:
+¿Por qué debemos construir atributos derivados durante el curso de una investigación de minería de datos? No se debe pensar que sólo se deben utilizar datos de bases de datos u otras fuentes en la construcción de un modelo. Los atributos derivados pueden ser construidos porque:
 
-* Background knowledge convinces us that some fact is important and ought to be represented although we have no attribute currently to represent it
-* The modeling algorithm in use handles only certain types of data—for example we are using linear regression and we suspect that there are certain non-linearities that will be not be included in the model
-* The outcome of the modeling phase suggests that certain facts are not being covered
+* El conocimiento de negocio nos convence de que algún hecho es importante y debe ser representado, aunque actualmente no tenemos ningún atributo que lo represente.
+* El algoritmo de modelado maneja sólo ciertos tipos de datos - por ejemplo, estamos usando regresión lineal y sospechamos que hay ciertas no linealidades que no se incluirán en el modelo.
+* El resultado de la fase de modelado sugiere que ciertos hechos no están siendo cubiertos.
 
-#### Derived attributes
-* Decide if any attribute should be normalized (e.g., when using a clustering algorithm with age and income, in certain currencies, the income will dominate)
+#### Atributos derivados
+* Decidir si algún atributo debe ser normalizado (por ejemplo, cuando se utiliza un algoritmo de agrupación con edad e ingresos, en ciertas monedas, los ingresos dominarán).
 * Consider adding new information on the relevant importance of attributes by adding new attributes (for example, attribute weights, weighted normalization)
-* How can missing attributes be constructed or imputed? [Decide type of construction (e.g., aggregate, average, induction).]
-* Add new attributes to the accessed data
+* ¿Cómo pueden construirse o imputarse los atributos que faltan? Decida el tipo de construcción (por ejemplo, agregado, promedio, inducción).
+* Agregar nuevos atributos a los datos accedidos
 
-Before adding Derived Attributes, try to determine if and how they ease the model process or facilitate the modeling algorithm. Perhaps “income per person” is a better/easier attribute to use than “income per household.” Do not derive attributes simply to reduce the number of input attributes.
+Antes de agregar Atributos Derivados, trate de determinar si y cómo facilitan el proceso del modelo o facilitan el algoritmo de modelado. Tal vez "ingresos por persona" sea un atributo mejor y más fácil de usar que "ingresos por hogar". No derive atributos simplemente para reducir el número de atributos de entrada.
 
-Another type of derived attribute is the single-attribute transformation, usually performed to fit the needs of the modeling tools.
+Otro tipo de atributo derivado es la transformación de un solo atributo, que normalmente se realiza para adaptarse a las necesidades de las herramientas de modelado.
 
-#### Single-attribute transformations
-* Specify necessary transformation steps in terms of available transformation facilities (for example, change a binning of a numeric attribute)
-* Perform transformation steps
+#### Transformaciones de un solo atributo
+* Especificar los pasos de transformación necesarios  (por ejemplo, cambiar un campo de un atributo numérico).
+* Realizar pasos de transformación
 
-Transformations may be necessary to change ranges to symbolic fields (e.g., ages to age ranges) or symbolic fields (“definitely yes,” “yes,” “don’t know,” “no”) to numeric values. Modeling tools or algorithms often require them.
+Las transformaciones pueden ser necesarias para cambiar rangos a campos simbólicos (por ejemplo, edades a rangos de edad) o campos simbólicos ("definitivamente sí", "sí", "no sé", "no sé") a valores numéricos. Las herramientas de modelado o los algoritmos a menudo las requieren.
 
-### Generated Records
-Generated records are completely new records, which add new knowledge or represent new data that is not otherwise represented (e.g., having segmented the data, it may be useful to generate a record to represent the prototypical member of each segment for further processing).
+### Registros generados
+Los registros generados son registros completamente nuevos, que añaden nuevos conocimientos o representan nuevos datos que no están representados de otra manera (por ejemplo, habiendo segmentado los datos, puede ser útil generar un registro para representar al miembro prototípico de cada segmento para su posterior procesamiento).
 
-Check for available techniques if needed (e.g., mechanisms to construct prototypes for each segment of segmented data).
+Verificar las técnicas disponibles si es necesario (por ejemplo, mecanismos para construir prototipos para cada segmento de datos).
 
-## Integrate Data
-These are methods for combining information from multiple tables or other information sources to create new records or values.
+## Integración de datos
+Estos son métodos para combinar información de múltiples tablas u otras fuentes para crear nuevos registros o valores.
 
-### Merged Data
-Merging tables refers to joining together two or more tables that have different information about the same objects. At this stage, it may also be advisable to generate new records. It may also be recommended to generate aggregate values.
+### Fusionar datos
 
-Aggregation refers to operations where new values are computed by summarizing information from multiple records and/or tables.
+La fusión de tablas se refiere a la unión de dos o más tablas que tienen información diferente sobre los mismos objetos. En esta etapa, también puede ser aconsejable generar nuevos registros. También se puede recomendar generar valores agregados.
 
-* Check if integration facilities are able to integrate the input sources as required
-* Integrate sources and store results
-* Reconsider Data Selection Criteria in light of experiences of data integration (i.e., you may wish to include/exclude other sets of data)
+La agregación se refiere a las operaciones en las que se calculan nuevos valores resumiendo la información de varios registros y/o tablas.
 
-Remember that some knowledge may be contained in non-electronic format.
+* Comprobar si las herramientas de integración son capaces de integrar las fuentes de entrada según sea necesario.
+* Integrar fuentes y almacenar resultados
+* Reconsiderar los criterios de selección de datos a la luz de las experiencias de integración de datos (es decir, es posible que desee incluir o excluir otros conjuntos de datos).
 
-## Format Data
-Formatting transformations refers primarily to syntactic modifications made to the data that do not change its meaning, but might be required by the modeling tool.
+Recuerde que algunos datos pueden estar contenidos en un formato no electrónico.
 
-### Reformatted Data
-Some tools have requirements on the order of the attributes, such as the first field being a unique identifier for each record or the last field being the outcome field the model is to predict.
+## Formato de datos
+Las transformaciones de formato se refieren principalmente a modificaciones sintácticas hechas a los datos que no cambian su significado, pero que pueden ser requeridas por la herramienta de modelado.
 
-#### Rearranging attributes
-Some tools have requirements on the order of the attributes, such as the first field being a unique identifier for each record or the last field being the outcome field the model is to predict.
+### Datos reformateados
+Algunas herramientas tienen requisitos sobre el orden de los atributos, como que el primer campo sea un identificador único para cada registro o que el último campo sea el campo de resultados que el modelo debe predecir.
 
-#### Reordering records
-It might be important to change the order of the records in the dataset. Perhaps the modeling tool requires that the records be sorted according to the value of the outcome attribute.
+#### Reorganizando atributos
+Algunas herramientas tienen requisitos sobre el orden de los atributos, como que el primer campo sea un identificador único para cada registro o que el último campo sea el campo de resultados que el modelo debe predecir.
 
-#### Reformatted within-value
-* These are purely syntactic changes made to satisfy the requirements of the specific modeling tool
-* Reconsider Data Selection Criteria in light of experiences of data cleaning (i.e., you may wish to include/exclude other sets of data)
+#### Reordenar los registros
+Puede ser importante cambiar el orden de los registros en el conjunto de datos. Tal vez la herramienta de modelado requiera que los registros se ordenen de acuerdo con el valor del atributo de resultado.
 
-## Dataset
-These are the dataset(s) produced by the data preparation phase, used for modeling or for the major analysis work of the project.
+#### Reformateado dentro del valor
+* Estos son cambios puramente sintácticos realizados para satisfacer los requisitos de la herramienta de modelado específica.
+* Reconsiderar los criterios de selección de datos a la luz de las experiencias de limpieza de datos (es decir, puede que desee incluir o excluir otros conjuntos de datos).
 
-### Dataset Description
-This is the description of the dataset(s) used for the modeling or for the major analysis work of the project.
+## Conjunto de datos
+Estos son los conjuntos de datos producidos por la fase de preparación de datos, utilizados para la modelización o para los principales trabajos de análisis del proyecto.
 
-# Modeling
+#### Descripción del conjunto de datos
+Esta es la descripción de los conjuntos de datos utilizados para el modelado o para el trabajo de análisis principal del proyecto.
 
-## Select Modeling Techniques
-As the first step in modeling, select the actual initial modeling technique. If multiple techniques are to be applied, perform this task separately for each technique.
+# Modelado
 
-Remember that not all tools and techniques are applicable to each and every task. For certain problems, only some techniques are appropriate (See Appendix 2, where techniques appropriate for certain data mining problem types are discussed in more detail). “Political requirements” and other constraints further limit the choices available to the data mining engineer. It may be that only one tool or technique is available to solve the problem at hand—and that the tool may not be absolutely the best, from a technical standpoint.
+## Selección de técnicas de modelado
+Como primer paso en el modelado, seleccione la técnica de modelado inicial. Si se van a aplicar múltiples técnicas, realice esta tarea por separado para cada técnica.
 
-### Modeling Technique
-Record the actual modeling technique that is used.
+Recuerde que no todas las herramientas y técnicas son aplicables a todas y cada una de las tareas. Para ciertos problemas, sólo algunas técnicas son apropiadas (véase el Apéndice 2, donde se discuten con más detalle las técnicas apropiadas para ciertos tipos de problemas de minería de datos). Los "requisitos políticos" y otras restricciones limitan aún más las opciones disponibles para el ingeniero de minería de datos. Puede ser que sólo se disponga de una herramienta o técnica para resolver el problema, y que la herramienta no sea la mejor, desde un punto de vista técnico.
 
-Decide on appropriate technique for exercise, bearing in mind the tool selected.
+### Técnica de modelado
+Registre la técnica de modelado real que se utiliza.
 
-### Modeling Assumptions
-Many modeling techniques make specific assumptions about the data.
+Elegir la técnica adecuada, teniendo en cuenta la herramienta seleccionada.
 
-* Define any built-in assumptions made by the technique about the data (e.g., quality, format, distribution)
-* Compare these assumptions with those in the Data Description Report
-* Make sure that these assumptions hold and go back to the Data Preparation Phase, if necessary
+### Modelando Suposiciones
+Muchas técnicas de modelado hacen suposiciones sobre los datos.
 
-## Generate Test Design
-Prior to building a model, it is necessary to define a procedure to test the model’s quality and validity. For example, in supervised data mining tasks such as classification, it is common to use error rates as quality measures for data mining models. Therefore, the test design specifies that the dataset should be separated into training and test sets. The model is built on the training set and its quality estimated on the test set.
+* Definir los supuestos que la técnica ha incorporado sobre los datos (por ejemplo, calidad, formato, distribución).
+* Comparar estos supuestos con los del Informe de Descripción de Datos.
+* Asegurarse de que estos supuestos se mantienen y volver a la fase de preparación de datos, si es necesario.
 
-### Test Design
-Describe the intended plan for training, testing, and evaluating the models. A primary component of the plan is to decide how to divide the available dataset into training data, test data, and validation test sets.
+## Generar el diseño de pruebas
+Antes de construir un modelo, es necesario definir un procedimiento para probar la calidad y validez del mismo. Por ejemplo, en tareas supervisadas de minería de datos como la clasificación, es común utilizar porcentajes de error como medidas de calidad para los modelos de minería. Por lo tanto, el diseño de las pruebas especifica que el conjunto de datos debe separarse en conjuntos de entrenamiento y pruebas. El modelo se construye sobre el equipo de entrenamiento y su calidad se estima sobre el equipo de prueba.
 
-* Check existing test designs for each data mining goal separately
-* Decide on necessary steps (number of iterations, number of folds, etc.)
-* Prepare data required for test
+### Diseño de pruebas
+Describa el plan previsto para el entrenamiento, prueba y validación de los modelos. Un componente principal del plan es decidir cómo dividir el conjunto de datos disponible en datos de entrenamiento, datos de prueba y datos de validación.
 
-## Build Model
-Run the modeling tool on the prepared dataset to create one or more models.
+* Comprobar los diseños de prueba existentes para cada objetivo de minería de datos por separado.
+* Decidir los pasos necesarios (número de iteraciones, número de pliegues, etc.)
+* Preparar los datos necesarios para la prueba
 
-### Parameter Settings
-With any modeling tool, there are often a large number of parameters that can be adjusted. List the parameters and their chosen values, along with the rationale for the choice.
+## Construcción del modelo
+Ejecutar la herramienta de modelado en el conjunto de datos preparado para crear uno o más modelos.
 
-* Set initial parameters
-* Document reasons for choosing those values
+### Ajustes de parámetros
+Con cualquier herramienta de modelado, a menudo hay un gran número de parámetros que pueden ser ajustados. Enumere los parámetros y sus valores elegidos, junto con la justificación de la elección.
 
-### Models
-Run the modeling tool on the prepared dataset to create one or more models.
+* Ajustar los parámetros iniciales
+* Documentar las razones para elegir esos valores
 
-* Run the selected technique on the input dataset to produce the model
-* Post-process data mining results (e.g., edit rules, display trees)
+### Modelos
+Ejecutar la herramienta de modelado en el conjunto de datos preparado para crear uno o más modelos.
 
-### Model Description
-Describe the resulting model and assess its expected accuracy, robustness, and possible shortcomings. Report on the interpretation of the models and any difficulties encountered.
+* Ejecutar la técnica seleccionada en el conjunto de datos de entrada para producir el modelo.
+* Resultados de la minería de datos después del proceso (por ejemplo, reglas de edición, árboles de visualización)
 
-* Describe any characteristics of the current model that may be useful for the future
-* Record parameter settings used to produce the model
-* Give a detailed description of the model and any special features
-* For rule-based models, list the rules produced, plus any assessment of per-rule or overall model accuracy and coverage
-* For opaque models, list any technical information about the model (such as neural network topology) and any behavioral descriptions produced by the modeling process (such as accuracy or sensitivity)
-* Describe the model’s behavior and interpretation
-* State conclusions regarding patterns in the data (if any); sometimes the model reveals important facts about the data without a separate assessment process (e.g., that the output or conclusion is duplicated in one of the inputs)
-
-## Assess Model
-The model should now be assessed to ensure that it meets the data mining success criteria and passes the desired test criteria. This is a purely technical assessment based on the outcome of the modeling tasks.
-
-### Model Assessment
-Summarize results of this task, list qualities of generated models (e.g., in terms of accuracy), and rank their quality in relation to each other.
-
-* Evaluate results with respect to evaluation criteria
-* Test result according to a test strategy (e.g.: Train and Test, Cross-validation, bootstrapping, etc.)
-* Compare evaluation results and interpretation
-* Create ranking of results with respect to success and evaluation criteria
-* Select best models
-* Interpret results in business terms (as far as possible at this stage)
-* Get comments on models by domain or data experts
-* Check plausibility of model
-* Check effect on data mining goal
-* Check model against given knowledge base to see if the discovered information is novel and useful
-* Check reliability of result
-* Analyze potential for deployment of each result
-* If there is a verbal description of the generated model (e.g., via rules), assess the rules: Are they logical, are they feasible, are there too many or too few, do they offend common sense?
-* Assess results
-* Get insights into why a certain modeling technique and certain parameter settings lead to good/bad results
-
-“Lift Tables” and “Gain Tables” can be constructed to determine how well the model is predicting.
-
-### Revised Parameter Settings
-According to the model assessment, revise parameter settings and tune them for the next run in the Build Model task. Iterate model building and assessment until you find the best model.
-
-Adjust parameters to produce better models.
-
-# Evaluation
-Previous evaluation steps dealt with factors such as the accuracy and generality of the model. This step assesses the degree to which the model meets the business objectives, and seeks to determine if there is some business reason why this model is deficient. It compares results with the evaluation criteria defined at the start of the project.
-
-A good way of defining the total outputs of a data mining project is to use the equation:
-$$RESULTS = MODELS + FINDINGS$$
-
-In this equation, we are defining that the total output of the data mining project is not just the models (although they are, of course, important) but also the findings, which we define as anything (apart from the model) that is important in meeting the objectives of the business or important in leading to new questions, lines of approach, or side effects (e.g., data quality problems uncovered by the data mining exercise). Note: Although the model is directly connected to the business questions, the findings need not be related to any questions or objectives, as long as they are important to the initiator of the project.
-
-## Evaluate Results
-This step assesses the degree to which the model meets the business objectives, and seeks to determine if there is some business reason why this model is deficient. Another option is to test the model(s) on test applications in the real application, if time and budget constraints permit.
-
-Moreover, evaluation also assesses other generated data mining results. Data mining results cover models that are related to the original business objectives and all other findings. Some are related to the original business objectives while others might unveil additional challenges, information, or hints for future directions.
-
-### Assessment of Data Mining Results w.r.t. Business Success Criteria
-Summarize assessment results in terms of business success criteria, including a final statement related to whether the project already meets the initial business objectives.
-
-* Understand the data mining results
-* Interpret the results in terms of the application
-* Check effect on for data mining goal
-* Check the data mining result against the given knowledge base to see if the discovered information is novel and useful
-* Evaluate and assess results with respect to business success criteria (i.e., has the project achieved the original Business Objectives)
-* Compare evaluation results and interpretation
-* Rank results with respect to business success criteria
-* Check effect of result on initial application goal
-* Determine if there are new business objectives to be addressed later in the project, or in new projects
-* State recommendations for future data mining projects
-
-### Approved Models
-After accessing models with respect to business success criteria, select and approve the generated models that meet the selected criteria.
-
-## Review Process
-At this point, the resulting model appears to be satisfactory and appears to satisfy business needs. It is now appropriate to make a more thorough review of the data mining engagement in order to determine if there is any important factor or task that has somehow been overlooked. At this stage of the data mining exercise, the Process Review takes the form of a Quality Assurance Review.
-
-### Review of Process
-Summarize the process review and list activities that have been missed and/or should be repeated.
-
-* Provide an overview of the data mining process used
-* Analyze the data mining process. For each stage of the process ask:
-    + Was it necessary?
-    + Was it executed optimally?
-    + In what ways could it be improved?
-* Identify failures
-* Identify misleading steps
-* Identify possible alternative actions and/or unexpected paths in the process
-* Review data mining results with respect to business success criteria
-
-## Determine Next Steps
-Based on the assessment results and the process review, the project team decides how to proceed. Decisions to be made include whether to finish this project and move on to deployment, to initiate further iterations, or to set up new data mining projects.
-
-### List of Possible Actions
-List possible further actions along with the reasons for and against each option.
-
-* Analyze the potential for deployment of each result
-* Estimate potential for improvement of current process
-* Check remaining resources to determine if they allow additional process iterations (or whether additional resources can be made available)
-* Recommend alternative continuations
-* Refine process plan
-
-### Decision
-Describe the decisions made, along with the rationale for them.
-
-* Rank the possible actions
-* Select one of the possible actions
-* Document reasons for the choice
-
-# Deployment
-
-## Plan Deployment
-This task starts with the evaluation results and concludes with a strategy for deployment of the data mining result(s) into the business.
-
-### Deployment Plan
-Summarize the deployment strategy, including necessary steps and how to perform them.
-
-* Summarize deployable results
-* Develop and evaluate alternative plans for deployment
-* Decide for each distinct knowledge or information result
-* Determine how knowledge or information will be propagated to users
-* Decide how the use of the result will be monitored and its benefits measured (where applicable)
-* Decide for each deployable model or software result
-* Establish how the model or software result will be deployed within the organization’s systems
-* Determine how its use will be monitored and its benefits measured (where applicable)
-* Identify possible problems during deployment (pitfalls to be avoided)
-
-## Plan Monitoring and Maintenance
-Monitoring and maintenance are important issues if the data mining results become part of the day-to-day business and its environment. A careful preparation of a maintenance strategy helps to avoid unnecessarily long periods of incorrect usage of data mining results. In order to monitor the deployment of the data mining result(s), the project needs a detailed plan for monitoring and maintenance. This plan takes into account the specific type of deployment.
-
-### Monitoring and Maintenance Plan
-Summarize monitoring and maintenance strategy, including necessary steps and how to perform them.
-
-* Check for dynamic aspects (i.e., what things could change in the environment?)
-* Decide how accuracy will be monitored
-* Determine when the data mining result or model should not be used any more. Identify criteria (validity, threshold of accuracy, new data, change in the application domain, etc.), and what should happen if the model or result could no longer be used. (update model, set up new data mining project, etc.).
-* Will the business objectives of the use of the model change over time? Fully document the initial problem the model was attempting to solve.
-* Develop monitoring and maintenance plan.
-
-## Produce Final Report
-At the end of the project, the project team writes up a final report. Depending on the deployment plan, this report may be only a summary of the project and its experience, or a final presentation of the data mining result(s).
-
-### Final Report
-At the end of the project, there will be at least one final report in which all the threads are brought together. As well as identifying the results obtained, the report should also describe the process, show which costs have been incurred, define any deviations from the original plan, describe implementation plans, and make any recommendations for future work. The actual detailed content of the report depends very much on the intended audience.
-
-* Identify what reports are needed (slide presentation, management summary, detailed findings, explanation of models, etc.)
-* Analyze how well initial data mining goals have been met
-* Identify target groups for report
-* Outline structure and contents of report(s)
-* Select findings to be included in the reports
-* Write a report
-
-### Final Presentation
-As well as a final report, it may be necessary to make a final presentation to summarize the project -- maybe to the management sponsor, for example. The presentation normally contains a subset of the information contained in the final report, structured in a different way.
-
-* Decide on target group for the final presentation and determine if they will already have received the final report
-* Select which items from the final report should be included in final presentation
-
-## Review Project
-Assess what went right and what went wrong, what was done well, and what needs to be improved.
-
-### Experience Documentation
-Summarize important experience gained during the project. For example, pitfalls, misleading approaches, or tips for selecting the best-suited data mining techniques in similar situations could be part of this documentation. In ideal projects, experience documentation also covers any reports that have been written by individual project members during the project.
-
-* Interview all significant people involved in the project and ask them about their experience during the project
-* If end users in the business work with the data mining result(s), interview them: Are they satisfied? What could have been done better? Do they need additional support?
-* Summarize feedback and write the experience documentation
-* Analyze the process (things that worked well, mistakes made, lessons learned, etc.)
-* Document the specific data mining process (How can the results and the experience of applying the model be fed back into the process?)
-* Generalize from the details to make the experience useful for future projects
+### Descripción del modelo
+Describir el modelo resultante y evaluar su precisión, robustez y posibles deficiencias. Informe sobre la interpretación de los modelos y las dificultades encontradas.
+
+* Describir cualquier característica del modelo actual que pueda ser útil para el futuro.
+* Grabar los ajustes de los parámetros utilizados para producir el modelo
+* Describa detalladamente el modelo y sus características especiales.
+* Para los modelos basados en reglas, enumerar las reglas producidas, más cualquier evaluación de la precisión y cobertura por regla o por modelo general.
+* Para modelos opacos, enumerar cualquier información técnica sobre el modelo (como la topología de la red neuronal) y cualquier descripción de comportamiento producida por el proceso de modelado (como la precisión o la sensibilidad).
+* Describir el comportamiento y la interpretación del modelo
+* Establecer conclusiones con respecto a los patrones en los datos (si los hay); a veces el modelo revela hechos importantes acerca de los datos sin un proceso de evaluación separado (por ejemplo, que el resultado o la conclusión se duplica en uno de los insumos).
+
+## Evaluación
+El modelo debe ser evaluado ahora para asegurar que cumple con los criterios de éxito de la minería de datos y pasa los criterios de prueba deseados. Esta es una evaluación puramente técnica basada en el resultado de las tareas de modelado.
+
+### Evaluación del modelo
+
+Resuma los resultados de esta tarea, enumere las cualidades de los modelos generados (por ejemplo, en términos de precisión) y clasifique su calidad en relación entre sí.
+
+* Evaluar los resultados con respecto a los criterios de evaluación
+* Resultados de la prueba con respecto a una estrategia de prueba (por ejemplo: entrenamiento y prueba, validación cruzada, bootstrapping, etc.).
+* Comparar los resultados de la evaluación y la interpretación
+* Crear un ranking de resultados con respecto al éxito y a los criterios de evaluación.
+* Seleccione los mejores modelos
+* Interpretar los resultados en términos de negocio (en la medida de lo posible en esta fase).
+* Obtener comentarios de los expertos de dominio sobre los modelos
+* Comprobar la viabilidad del modelo
+* Comprobar el efecto sobre el objetivo de la minería de datos
+* Verificar el modelo contra la base de conocimiento dada para ver si la información descubierta es novedosa y útil.
+* Comprobar la fiabilidad del resultado
+* Analizar el potencial de despliegue de cada resultado
+* Si hay una descripción verbal del modelo generado (por ejemplo, mediante reglas), evalúe las reglas: ¿Son lógicos, son factibles, hay demasiados o muy pocos, ofenden el sentido común?
+* Evaluar los resultados
+* Obtener información sobre por qué una determinada técnica de modelado y ciertos ajustes de parámetros conducen a buenos/malos resultados.
+
+Se pueden construir "Tablas de elevación" y "Tablas de ganancia" para determinar qué tan bien está prediciendo el modelo.
+
+### Ajuste revisado de parámetros
+De acuerdo con la evaluación del modelo, revise los ajustes de los parámetros y ajústelos para la siguiente ejecución.
+
+Ajuste los parámetros para producir mejores modelos.
+
+# Evaluación
+Los pasos anteriores de la evaluación trataron factores tales como la precisión y generalidad del modelo. Este paso evalúa el grado en que el modelo cumple con los objetivos de negocio, y busca determinar si hay alguna razón comercial por la cual este modelo es deficiente. Compara los resultados con los criterios de evaluación definidos al inicio del proyecto.
+
+Una buena manera de definir los resultados totales de un proyecto de minería de datos es utilizar la ecuación:
+$$RESULTADOS = MODELOS + RESULTADOS$$$
+
+En esta ecuación, estamos definiendo que el producto total del proyecto de minería de datos no son sólo los modelos (aunque, por supuesto, son importantes), sino también los hallazgos, que definimos como cualquier cosa (aparte del modelo) que sea importante para cumplir con los objetivos del negocio o que conduzca a nuevas preguntas, líneas de enfoque o efectos secundarios (por ejemplo, problemas de calidad de datos descubiertos por la minería de datos). Nota: Aunque el modelo está directamente relacionado con las preguntas del negocio, los hallazgos no necesitan estar relacionados con ninguna pregunta u objetivo, siempre y cuando sean importantes para el promotor del proyecto.
+
+## Evaluar resultados
+Este paso evalúa el grado en que el modelo cumple con los objetivos de negocio, y busca determinar si hay alguna razón comercial por la cual este modelo es deficiente. Otra opción es probar los modelos en aplicaciones de prueba en la aplicación real, si las limitaciones de tiempo y presupuesto lo permiten.
+
+Además, la evaluación también valora otros resultados generados por la minería de datos. Los resultados de la minería de datos cubren modelos que están relacionados con los objetivos comerciales originales y todos los demás hallazgos. Algunos están relacionados con los objetivos comerciales originales, mientras que otros pueden revelar desafíos, información o pistas adicionales para futuros proyectos.
+
+### Evaluación de los resultados de la minería de datos con respecto a los criterios de éxito del negocio
+Resuma los resultados de la evaluación en términos de criterios de éxito comercial, incluyendo una declaración final relacionada con si el proyecto ya cumple con los objetivos comerciales iniciales.
+
+* Comprender los resultados de la minería de datos
+* Interpretar los resultados en términos de la aplicación
+* Comprobar el efecto sobre el objetivo de la minería de datos
+* Revisar el resultado de la minería de datos contra la base de conocimiento dada para ver si la información descubierta es novedosa y útil.
+* Evaluar y valorar los resultados con respecto a los criterios de éxito empresarial (es decir, si el proyecto ha alcanzado los objetivos empresariales originales).
+* Comparar los resultados de la evaluación y la interpretación
+* Clasificar los resultados con respecto a los criterios de éxito del negocio
+* Comprobar el efecto del resultado en el objetivo de la aplicación inicial
+* Determinar si hay nuevos objetivos de negocio a ser abordados más adelante en el proyecto, o en nuevos proyectos.
+* Recomendaciones de los estados para futuros proyectos de minería de datos
+
+### Modelos aprobados
+Después de tener evaluados a los modelos con respecto a los criterios de éxito del negocio, seleccione y apruebe los modelos generados que cumplan con los criterios seleccionados.
+
+## Proceso de revisión
+En este punto, el modelo resultante parece ser satisfactorio y satisfacer las necesidades del negocio. Ahora es apropiado hacer una revisión más completa de la participación en la minería de datos para determinar si hay algún factor o tarea importante que de alguna manera se haya pasado por alto. En esta etapa del ejercicio de minería de datos, la Revisión del Proceso toma la forma de una Revisión de Garantía de Calidad.
+
+### Revisión del proceso
+Resuma el proceso de revisión y haga una lista de las actividades que se han omitido y/o que deben repetirse.
+
+* Proporcionar una visión general del proceso de minería de datos utilizado
+* Analizar el proceso de minería de datos. Para cada etapa del proceso pregunte:
+    + ¿Era necesario?
+    + ¿Fue ejecutado de manera óptima?
+    + ¿De qué manera podría mejorarse?
+* Identificar las fallas
+* Identificar los pasos engañosos
+* Identificar posibles acciones alternativas y/o caminos inesperados en el proceso
+* Revisar los resultados de la minería de datos con respecto a los criterios de éxito del negocio
+
+## Determinar los siguientes pasos
+Basándose en los resultados de la evaluación y en la revisión del proceso, el equipo del proyecto decide cómo proceder. Las decisiones que se deben tomar incluyen si se debe terminar este proyecto y pasar al despliegue, iniciar nuevas iteraciones o establecer nuevos proyectos de minería de datos.
+
+### Lista de posibles acciones
+Enumere las posibles acciones adicionales junto con las razones a favor y en contra de cada opción.
+
+* Analizar el potencial de despliegue de cada resultado
+* Estimar el potencial de mejora del proceso actual
+* Revisar los recursos restantes para determinar si permiten iteraciones de proceso adicionales (o si se pueden hacer disponibles recursos adicionales).
+* Recomendar iteraciones alternativas
+* Refinar el plan de proceso
+
+### Decisiones
+Describa las decisiones tomadas, junto con la justificación de las mismas.
+
+* Clasificar las posibles acciones
+* Seleccione una de las acciones posibles
+* Documentar las razones de la elección
+
+# Implementación
+
+## Planear la implementación
+Esta tarea comienza con los resultados de la evaluación y concluye con una estrategia para la implementación de los resultados de la minería de datos en el negocio.
+
+### Plan de implementación
+Resuma la estrategia de implementación, incluyendo los pasos necesarios y cómo llevarlos a cabo.
+
+* Resumir resultados que se pueden implementar
+* Desarrollar y evaluar planes alternativos de despliegue
+* Determinar cómo se trasladará el conocimiento o la información a los usuarios.
+* Decidir cómo se va a rastrear el uso del resultado y cómo se medirán sus beneficios (cuando corresponda).
+* Decidir para cada modelo desplegable o resultado de software
+* Establecer cómo se desplegará el modelo o el resultado del software dentro de los sistemas de la organización.
+* Determinar cómo se va a monitorear su uso y cómo se medirán sus beneficios (cuando corresponda).
+* Identificar posibles problemas durante la implementación (trampas que deben evitarse)
+
+## Planear el monitoreo y mantenimiento
+La supervisión y el mantenimiento son cuestiones importantes si los resultados de la minería de datos se convierten en parte del negocio diario y de su entorno. . Para poder monitorear el despliegue de los resultados de la minería de datos, el proyecto necesita un plan detallado de monitoreo y mantenimiento. Este plan tiene en cuenta el tipo específico de despliegue.
+
+### Plan de Monitoreo y Mantenimiento
+Resuma la estrategia de monitoreo y mantenimiento, incluyendo los pasos necesarios y cómo llevarlos a cabo.
+
+* Compruebe los aspectos dinámicos (es decir, ¿qué cosas podrían cambiar en el entorno?).
+* Decidir cómo se monitoreará la precisión
+* Determinar cuando el resultado de la minería de datos o el modelo no debe ser utilizado más. Identificar los criterios (validez, umbral de precisión, nuevos datos, cambio en el dominio de la aplicación, etc.), y lo que debería suceder si el modelo o resultado ya no pudiera utilizarse. (actualizar el modelo, crear un nuevo proyecto de minería de datos, etc.).
+* ¿Los objetivos de negocio del uso del modelo cambiarán con el tiempo? Documentar completamente el problema inicial que el modelo intentaba resolver.
+* Desarrollar un plan de monitoreo y mantenimiento.
+
+## Producir el reporte final
+Al final del proyecto, el equipo del proyecto redacta un informe final. Dependiendo del plan de implementación, este informe puede ser sólo un resumen del proyecto y su experiencia, o una presentación final de los resultados de la minería de datos.
+
+### Reporte final
+Al final del proyecto, habrá al menos un informe final en el que se reunirán todos los hilos conductores. Además de identificar los resultados obtenidos, el informe también debe describir el proceso, mostrar los costos incurridos, definir cualquier desviación del plan original, describir los planes de implementación y hacer recomendaciones para trabajos futuros. El contenido del informe depende en gran medida de la audiencia a la que se dirige.
+
+* Identificar qué informes son necesarios (presentación de diapositivas, resumen de la gestión, conclusiones detalladas, explicación de los modelos, etc.).
+* Analizar hasta qué punto se han cumplido los objetivos iniciales de la minería de datos
+* Identificar los grupos objetivo para el informe
+* Esquema de la estructura y el contenido de los informes
+* Seleccionar los hallazgos que se incluirán en los informes
+* Escribir un informe
+
+### Presentación final
+Además de un informe final, puede ser necesario hacer una presentación final para resumir el proyecto, por ejemplo, ante el patrocinador. La presentación normalmente contiene un subconjunto de la información contenida en el informe final, estructurada de manera diferente.
+
+* Decidir el grupo objetivo para la presentación final y determinar si ya han recibido el informe final.
+* Seleccionar qué elementos del informe final deben incluirse en la presentación final.
+
+## Revisión del proyecto
+Evaluar lo que salió bien y lo que salió mal, lo que se hizo bien y lo que necesita ser mejorado.
+
+### Documentación de experiencias
+Resuma la experiencia importante adquirida durante el proyecto. Por ejemplo, las trampas, los enfoques engañosos o los consejos para seleccionar las técnicas de minería de datos más adecuadas en situaciones similares podrían formar parte de esta documentación. En muchos proyectos, la documentación de la experiencia también cubre cualquier informe que haya sido escrito por miembros individuales del proyecto durante el proyecto.
+
+* Entrevistar a todas las personas importantes involucradas en el proyecto y preguntarles sobre su experiencia durante el proyecto.
+* Si los usuarios finales de la empresa trabajan con los resultados de la minería de datos, entrevistarlos: ¿Están satisfechos? ¿Qué podría haberse hecho mejor? ¿Necesitan apoyo adicional?
+* Resumir los comentarios y escribir la documentación de la experiencia.
+* Analizar el proceso (cosas que funcionaron bien, errores cometidos, lecciones aprendidas, etc.)
+* Documentar el proceso específico de minería de datos (¿Cómo pueden los resultados y la experiencia de la aplicación del modelo ser retroalimentados en el proceso?)
+* Generalizar a partir de los detalles para que la experiencia sea útil para futuros proyectos.
