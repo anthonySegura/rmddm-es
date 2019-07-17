@@ -1,6 +1,6 @@
 ---
-title: "Project Title"
-author: "Author"
+title: "Título del Proyecto"
+author: "Autor"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output: 
   html_document: 
@@ -17,9 +17,9 @@ options(scipen=999)
 ## load packages
 ```
 
-# Business Understanding
+# Comprensión del negocio
 
-## Determine Business Objectives
+## Establecimiento de los objetivos del negocio
 The first objective of the analyst is to thoroughly understand, from a business perspective, what the customer really wants to accomplish. Often the customer has many competing objectives and constraints that must be properly balanced. The analyst’s goal is to uncover important factors at the beginning of the project that can influence the final outcome. A likely consequence of neglecting this step would be to expend a great deal of effort producing the correct answers to the wrong questions.
 
 ### Background
