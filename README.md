@@ -13,7 +13,7 @@ remotes::install_github("anthonySegura/rmddm-es")
 
 ## Ejemplo
 
-Crear una plantilla RMarkdown con la estructura CRISP-DM:
+Crea una plantilla RMarkdown con la estructura CRISP-DM:
 
 ``` r
 library(rmarkdown)
