@@ -17,5 +17,5 @@ Crea una plantilla RMarkdown con la estructura CRISP-DM:
 
 ``` r
 library(rmarkdown)
-draft("MiReporte.Rmd", template = "crispdm_report_es", package = "rmddmEs", edit=FALSE)
+draft("MiReporte.Rmd", template = "crispdm_report_es", package = "rmddmES", edit=FALSE)
 ```
