@@ -208,148 +208,148 @@ Describa todos los datos utilizados para el proyecto e incluya cualquier requisi
 
 Recuerde que cualquier evaluación de la calidad de los datos debe hacerse no sólo de las fuentes de datos individuales, sino también de cualquier dato que resulte de la fusión entre fuentes de datos. Debido a las inconsistencias entre las fuentes, los datos fusionados pueden presentar problemas que no existen en las fuentes de datos individuales.
 
-#### Data requirements planning
-* Plan which information is needed (e.g., only for given attributes, or specific additional information)
-* Check if all the information needed (to solve the data mining goals) is actually available
+#### Requisitos de datos
+* Planificar qué información se necesita (por ejemplo, sólo determinados atributos o información adicional específica).
+* Comprobar si toda la información necesaria (para resolver los objetivos de la minería de datos) está  disponible.
 
-#### Selection criteria
-* Specify selection criteria (e.g., Which attributes are necessary for the specified data mining goals? Which attributes have been identified as being irrelevant? How many attributes can we handle with the chosen techniques?)
-* Select tables/files of interest
-* Select data within a table/file
-* Think about how long a history one should use (e.g., even if 18 months of data are available, only 12 months may be needed for the exercise)
+#### Criterios de selección
+* Especificar los criterios de selección (por ejemplo, ¿Qué atributos son necesarios para los objetivos de minería de datos especificados? ¿Qué atributos se han identificado como irrelevantes? ¿Cuántos atributos podemos manejar con las técnicas elegidas?)
+* Seleccionar tablas/archivos de interés
+* Seleccionar datos dentro de una tabla/archivo
+* Piense en cuánto tiempo se debe utilizar un historial (por ejemplo, aunque se disponga de 18 meses de datos, es posible que sólo se necesiten 12 meses para el ejercicio).
 
-**Be aware that data collected from different sources may give rise to quality problems when merged (e.g., address files merged with a customer database may show inconsistencies of format, invalidity of data, etc.).**
+**Tenga en cuenta que los datos recopilados de diferentes fuentes pueden dar lugar a problemas de calidad cuando se fusionan (por ejemplo, los archivos de direcciones fusionados con una base de datos de clientes pueden mostrar inconsistencias de formato, invalidez de los datos, etc.)**.
 
-#### Insertion of data
-* If the data contain free text entries, do we need to encode them for modeling or do we want to group specific entries?
-* How can missing attributes be acquired?
-* How can we best extract the data?
+#### Inserción de datos
+* Si los datos contienen campos de 'free text', ¿necesitamos codificarlos para el modelado o queremos agrupar entradas específicas?
+* ¿Cómo se pueden adquirir los atributos faltantes?
+* ¿Cómo podemos extraer mejor los datos?
 
-Remember that some knowledge about the data may be available from non-electronic sources (e.g., from people, printed text, etc.).
+Recuerde que algunos conocimientos sobre los datos pueden provenir de fuentes no electrónicas (por ejemplo, de personas, texto impreso, etc.).
 
-Remember that it may be necessary to preprocess the data (time-series data, weighted averages, etc.).
+Recuerde que puede ser necesario preprocesar los datos (datos de series temporales, promedios ponderados, etc.).
 
-## Describe Data
-Examine the “gross” properties of the acquired data and report on the results.
+## Describir los datos
+Examinar las propiedades "brutas" de los datos adquiridos e informar sobre los resultados.
 
-### Data Description Report
-Describe the data that has been acquired, including the format of the data, the quantity of the data (e.g., the number of records and fields within each table), the identities of the fields, and any other surface features that have been discovered.
+### Informe de descripción de datos
+Describa los datos que se han adquirido, incluyendo el formato de los datos, la cantidad de datos (por ejemplo, el número de registros y campos dentro de cada tabla), las identidades de los campos y cualquier otra característica que se haya descubierto.
 
-#### Volumetric analysis of data
-* Identify data and method of capture
-* Access data sources
-* Use statistical analyses if appropriate
-* Report tables and their relations
-* Check data volume, number of multiples, complexity
-* Note if the data contain free text entries
+#### Análisis volumétrico de datos
+* Identificar los datos y el método de captura
+* Acceso a fuentes de datos
+* Usar análisis estadísticos si es necesario
+* Reportar las tablas y sus relaciones
+* Comprobar el volumen de datos, el número de múltiplos, la complejidad
+* Tenga en cuenta si los datos contienen campos 'free text'
 
-#### Attribute types and values
-* Check accessibility and availability of attributes
-* Check attribute types (numeric, symbolic, taxonomy, etc.)
-* Check attribute value ranges
-* Analyze attribute correlations
-* Understand the meaning of each attribute and attribute value in business terms
-* For each attribute, compute basic statistics (e.g., compute distribution, average, max, min, standard deviation, variance, mode, skewness, etc.)
-* Analyze basic statistics and relate the results to their meaning in business terms
-* Decide if the attribute is relevant for the specific data mining goal
-* Determine if the attribute meaning is used consistently
-* Interview domain experts to obtain their opinion of attribute relevance
-* Decide if it is necessary to balance the data (based on the modeling techniques to be used)
+#### Tipos de atributos y valores
+* Comprobar la accesibilidad y disponibilidad de los atributos
+* Comprobar los tipos de atributos (numéricos, simbólicos, taxonómicos, etc.)
+* Verificar los rangos de valores de los atributos
+* Analizar las correlaciones de atributos
+* Comprender el significado de cada atributo y valor del atributo en términos de negocio.
+* Para cada atributo, calcular estadísticas básicas (por ejemplo, distribución, promedio, máximo, mínimo, desviación estándar, varianza, moda, asimetría, etc.).
+* Analizar las estadísticas básicas y relacionar los resultados con su significado en términos de negocio.
+* Decidir si el atributo es relevante para el objetivo específico de la minería de datos.
+* Determinar si el significado del atributo se usa consistentemente
+* Entrevistar a los expertos de dominio para obtener su opinión sobre la importancia de los atributos.
+* Decidir si es necesario balancear los datos (en base a las técnicas de modelado).
 
-#### Keys
-* Analyze key relationships
-* Check amount of overlaps of key attribute values across tables
+#### Claves
+* Analizar las relaciones claves
+* Comprobar la cantidad de solapamientos de los  atributos clave en las tablas.
 
-#### Review assumptions/goals
-* Update list of assumptions, if necessary
+#### Revisar los supuestos/objetivos
+* Actualizar la lista de supuestos, si es necesario
 
-## Explore Data
-This task tackles the data mining questions that can be addressed using querying, visualization, and reporting techniques. These analyses may directly address the data mining goals. However, they may also contribute to or refine the data description and quality reports, and feed into the transformation and other data preparation steps needed before further analysis can occur.
+## Explorar los datos
+Esta tarea aborda las preguntas de la minería de datos que pueden abordarse mediante técnicas de consulta, visualización y generación de informes. Estos análisis pueden abordar directamente los objetivos de la minería de datos. Sin embargo, también pueden contribuir a la descripción de los datos y los informes de calidad, o perfeccionarlos, y contribuir a la transformación y a otras medidas de preparación de los datos necesarias antes de que puedan realizarse análisis adicionales.
 
-### Data Exploration Report
-Describe the results of this task, including first findings or initial hypotheses and their impact on the remainder of the project. The report may also include graphs and plots that indicate data characteristics or point to interesting data subsets worthy of further examination.
+### Informe de exploración de datos
+Describir los resultados de esta tarea, incluyendo los  hallazgos o hipótesis iniciales y su impacto en el resto del proyecto. El informe también puede incluir gráficos que indican las características de los datos o apuntan a subconjuntos de datos interesantes que merecen un examen más detallado.
 
-#### Data exploration
-* Analyze properties of interesting attributes in detail (e.g., basic statistics, interesting sub-populations)
-* Identify characteristics of sub-populations
+#### Exploración de datos
+* Analizar propiedades de atributos interesantes en detalle (por ejemplo, estadísticas básicas, subpoblaciones interesantes).
+* Identificar las características de las subpoblaciones
 
-#### Form suppositions for future analysis
-* Consider and evaluate information and findings in the data descriptions report
-* Form a hypothesis and identify actions
-* Transform the hypothesis into a data mining goal, if possible
-* Clarify data mining goals or make them more precise. A “blind” search is not necessarily useless, but a more directed search toward business objectives is preferable.
-* Perform basic analysis to verify the hypothesis
+#### Formar suposiciones para análisis futuros
+* Evaluar la información y los hallazgos en el informe de descripción de datos.
+* Formular una hipótesis e identificar acciones
+* Transformar la hipótesis en una meta de minería de datos, si es posible.
+* Aclarar los objetivos de la minería de datos o hacerlos más precisos. Una búsqueda "ciega" no es necesariamente inútil, pero es preferible una búsqueda más dirigida hacia los objetivos del negocio.
+* Realizar análisis básicos para verificar la hipótesis
 
-## Verify Data Quality
-Examine the quality of the data, addressing questions such as: Is the data complete (does it cover all the cases required)? Is it correct or does it contain errors? If there are errors, how common are they? Are there missing values in the data? If so, how are they represented, where do they occur, and how common are they?
+## Verificar la calidad de los datos
+Examinar la calidad de los datos, abordando preguntas como: ¿Están completos los datos (cubre todos los casos requeridos)? ¿Están correctos o contienen errores? Si hay errores, ¿qué tan comunes son? ¿Hay valores faltantes en los datos? Si es así, ¿cómo se representan, dónde ocurren y qué tan comunes son?
 
-### Data Quality Report
-List the results of the data quality verification; if there are quality problems, list possible solutions.
+### Informe de calidad de datos
+Listar los resultados de la verificación de calidad de los datos; si hay problemas de calidad, enumerar las posibles soluciones.
 
-* Identify special values and catalog their meaning
+* Identificar valores especiales y catalogar su significado
 
-#### Review keys, attributes
-* Check coverage (e.g., whether all possible values are represented)
-* Check keys
-* Verify that the meanings of attributes and contained values fit together
-* Identify missing attributes and blank fields
-* Establish the meaning of missing data
-* Check for attributes with different values that have similar meanings (e.g., low fat, diet)
-* Check spelling and format of values (e.g., same value but sometimes beginning with a lower-case letter, sometimes with an upper-case letter)
-* Check for deviations, and decide whether a deviation is “noise” or may indicate an interesting phenomenon
-* Check for plausibility of values, (e.g., all fields having the same or nearly the same values)
+#### Revisar claves, atributos
+* Verificar la cobertura (por ejemplo, si se representan todos los valores posibles)
+* Verificar claves
+* Verificar que los significados de los atributos y los valores contenidos encajan entre sí
+* Identificar atributos faltantes y campos en blanco
+* Establecer el significado de los datos faltantes
+* Compruebe si hay atributos con valores diferentes que tengan significados similares (por ejemplo, bajo en grasa, dieta).
+* Revisar la ortografía y el formato de los valores (por ejemplo, el mismo valor, pero a veces comenzando con una letra minúscula, a veces con una mayúscula).
+* Comprobar si hay desviaciones y decidir si una desviación es "ruido" o puede indicar un fenómeno interesante.
+* Verificar la plausibilidad de los valores (por ejemplo, todos los campos que tienen los mismos o casi los mismos valores).
 
-Review any attributes that give answers that conflict with common sense (e.g., teenagers with high income levels).
+Revise cualquier atributo que entre en conflicto con el sentido común (por ejemplo, adolescentes con altos niveles de ingresos).
 
-Use visualization plots, histograms, etc. to reveal inconsistencies in the data.
+Utilice gráficas de visualización, histogramas, etc. para revelar inconsistencias en los datos.
 
-#### Data quality in flat files
-* If data are stored in flat files, check which delimiter is used and whether it is used consistently within all attributes
-* If data are stored in flat files, check the number of fields in each record to see if they coincide
+#### Calidad de datos en archivos planos
+* Si los datos se almacenan en archivos planos, compruebe qué delimitador se utiliza y si se utiliza de forma coherente dentro de todos los atributos.
+* Si los datos se almacenan en archivos planos, compruebe el número de campos de cada registro para ver si coinciden.
 
-#### Noise and inconsistencies between sources
-* Check consistencies and redundancies between different sources
-* Plan for dealing with noise
-* Detect the type of noise and which attributes are affected
+#### Ruido e inconsistencias entre las fuentes
+* Verificar consistencias y redundancias entre diferentes fuentes.
+* Plan para lidiar con el ruido
+* Detectar el tipo de ruido y qué atributos se ven afectados
 
-Remember that it may be necessary to exclude some data since they do not exhibit either positive or negative behavior (e.g., to check on customers’ loan behavior, exclude all those who have never borrowed, do not finance a home mortgage, those whose mortgage is nearing maturity, etc.).
+Recuerde que puede ser necesario excluir algunos datos que no muestran un comportamiento positivo o negativo (por ejemplo, para comprobar el comportamiento de los clientes en materia de préstamos, excluir a todos aquellos que nunca han pedido prestado, ni financiado una hipoteca de vivienda, aquellos cuya hipoteca está a punto de vencer, etc.).
 
-Review whether assumptions are valid or not, given the current information on data and business knowledge.
+Revisar si los supuestos son válidos o no, dada la información actual sobre los datos y el conocimiento del negocio.
 
-# Data Preparation
-**Dataset:** These are the dataset(s) produced by the data preparation phase, used for modeling or for the major analysis work of the project.
+# Preparación de datos
+**Conjunto de datos**: Estos son los conjuntos de datos producidos por la fase de preparación de los datos, utilizados para el modelado o para el trabajo de análisis principal del proyecto. 
 
-**Dataset description:** This is the description of the dataset(s) used for the modeling or for the major analysis work of the project.
+**Descripción del conjunto de datos:** Esta es la descripción de los conjuntos de datos utilizados para el modelado o para el trabajo de análisis principal del proyecto.
 
-## Select Data
-Decide on the data to be used for analysis. Criteria include relevance to the data mining goals, quality, and technical constraints such as limits on data volume or data types.
+## Seleccionar datos
+Decidir qué datos se utilizarán para el análisis. Los criterios incluyen la relevancia para los objetivos de la minería de datos, la calidad y las restricciones técnicas, como los límites en el volumen de datos o los tipos de datos.
 
-### Rationale for Inclusion/Exclusion
-List the data to be used/excluded and the reasons for these decisions.
+### Justificación de la inclusión/exclusión
+Enumere los datos que deben utilizarse/excluirse y las razones de estas decisiones.
 
-* Collect appropriate additional data (from different sources—in-house as well as externally)
-* Perform significance and correlation tests to decide if fields should be included
-* Reconsider Data Selection Criteria in light of experiences of data quality and data exploration (i.e., may wish include/exclude other sets of data)
-* Reconsider Data Selection Criteria in light of experience of modeling (i.e., model assessment may show that other datasets are needed)
-* Select different data subsets (e.g., different attributes, only data which meet certain conditions)
-* Consider the use of sampling techniques (e.g., A quick solution may involve splitting test and training datasets or reducing the size of the test dataset, if the tool cannot handle the full dataset. It may also be useful to have weighted samples to give different importance to different attributes or different values of the same attribute.)
-* Document the rationale for inclusion/exclusion
-* Check available techniques for sampling data
+* Recopilar datos adicionales (de diferentes fuentes internas y externas).
+* Realizar pruebas de significancia y correlación para decidir si los campos deben ser incluidos.
+* Reconsiderar los criterios de selección de datos a la luz de las experiencias de calidad de datos y exploración de datos (es decir, tal vez desee incluir o excluir otros conjuntos de datos).
+* Reconsiderar los criterios de selección de datos a la luz de la experiencia del modelado (es decir, la evaluación del modelo puede mostrar que se necesitan otros conjuntos de datos).
+* Seleccionar diferentes subconjuntos de datos (por ejemplo, diferentes atributos, sólo datos que cumplan ciertas condiciones).
+* Considere el uso de técnicas de muestreo (por ejemplo, una solución rápida puede implicar la división del conjunto de datos en datos de prueba y entrenamiento o la reducción del tamaño del conjunto de datos, si la herramienta no puede manejar el conjunto de datos completo. También puede ser útil tener muestras ponderadas para dar diferente importancia a diferentes atributos o a diferentes valores del mismo atributo.)
+* Documentar las razones de la inclusión/exclusión
+* Comprobar las técnicas disponibles para el muestreo de datos
 
-Based on Data Selection Criteria, decide if one or more attributes are more important than others and weight the attributes accordingly. Decide, based on the context (i.e., application, tool, etc.), how to handle the weighting.
+En función de los criterios de selección de datos, decida si uno o más atributos son más importantes que otros y pondere los atributos en consecuencia. Decidir, basándose en el contexto (es decir, la aplicación, la herramienta, etc.), cómo manejar la ponderación.
 
-## Clean Data
-Raise the data quality to the level required by the selected analysis techniques. This may involve the selection of clean subsets of the data, the insertion of suitable defaults, or more ambitious techniques such as the estimation of missing data by modeling.
+## Limpieza de datos
+Elevar la calidad de los datos al nivel requerido por las técnicas de análisis seleccionadas. Esto puede implicar la selección de subconjuntos limpios de datos, la inserción de valores predeterminados adecuados, o técnicas más ambiciosas como la estimación de los datos que faltan mediante modelización.
 
-### Data Cleaning Report
-Describe the decisions and actions that were taken to address the data quality problems reported during the Verify Data Quality Task. If the data are to be used in the data mining exercise, the report should address outstanding data quality issues and what possible effect this could have on the results.
+### Informe de limpieza de datos
+Describa las decisiones y acciones que se tomaron para abordar los problemas de calidad de datos reportados durante la tarea de verificación de la calidad de datos. Si los datos se van a utilizar en el ejercicio de extracción de datos, el informe debe abordar las cuestiones pendientes relativas a la calidad de los datos y el posible efecto que esto podría tener en los resultados.
 
-* Reconsider how to deal with any observed type of noise
-* Correct, remove, or ignore noise
-* Decide how to deal with special values and their meaning. The area of special values can give rise to many strange results and should be carefully examined. Examples of special values could arise through taking results of a survey where some questions were not asked or not answered. This might result in a value of 99 for unknown data. For example, 99 for marital status or political affiliation. Special values could also arise when data is truncated—e.g., 00 for 100-year-old people or all cars with 100,000 km on the odometer.
-* Reconsider Data Selection Criteria in light of experiences of data cleaning (i.e., you may wish to include/exclude other sets of data).
+* Considerar cómo lidiar con cualquier tipo de ruido observado.
+* Corregir, eliminar o ignorar el ruido
+* Decidir cómo tratar con valores especiales y su significado. Los valores especiales pueden dar lugar a muchos resultados extraños y deben ser examinados cuidadosamente. Ejemplos de valores especiales podrían surgir al tomar los resultados de una encuesta donde algunas preguntas no fueron hechas o no fueron contestadas. Esto podría resultar en un valor de 99 para datos desconocidos. Por ejemplo, 99 por estado civil o afiliación política. También pueden surgir valores especiales cuando los datos están truncados, por ejemplo, 00 para personas de 100 años o todos los coches con 100.000 km en el cuentakilómetros.
+* Reconsiderar los criterios de selección de datos a la luz de las experiencias de limpieza de datos (es decir, puede que desee incluir o excluir otros conjuntos de datos).
 
-Remember that some fields may be irrelevant to the data mining goals and, therefore, noise in those fields has no significance. However, if noise is ignored for these reasons, it should be fully documented as the circumstances may change later.
+Recuerde que algunos campos pueden ser irrelevantes para los objetivos de la minería de datos y, por lo tanto, el ruido en esos campos no tiene importancia. Sin embargo, si el ruido se ignora por estas razones, debe documentarse completamente, ya que las circunstancias pueden cambiar más tarde.
 
 ## Construct Data
 This task includes constructive data preparation operations such as the production of derived attributes, complete new records, or transformed values for existing attributes.

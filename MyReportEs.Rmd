@@ -20,198 +20,193 @@ options(scipen=999)
 # Comprensión del negocio
 
 ## Establecimiento de los objetivos del negocio
-The first objective of the analyst is to thoroughly understand, from a business perspective, what the customer really wants to accomplish. Often the customer has many competing objectives and constraints that must be properly balanced. The analyst’s goal is to uncover important factors at the beginning of the project that can influence the final outcome. A likely consequence of neglecting this step would be to expend a great deal of effort producing the correct answers to the wrong questions.
+El primer objetivo del analista es comprender a fondo, desde una perspectiva de negocio, lo que el cliente realmente quiere lograr. A menudo, el cliente tiene muchos objetivos y limitaciones que compiten entre sí y que deben ser equilibrados adecuadamente. El objetivo del analista es descubrir factores importantes al principio del proyecto que pueden influir en el resultado final. Una consecuencia probable de descuidar este paso sería gastar mucho esfuerzo en producir las respuestas correctas a las preguntas equivocadas.
 
-### Background
-Collate the information that is known about the organization’s business situation at the start of the project. These details not only serve to more closely identify the business goals to be achieved but also serve to identify resources, both human and material, that may be used or needed during the course of the project.
+### Contexto
+Recopilar la información que se conoce sobre la situación empresarial de la organización al inicio del proyecto. Estos detalles no sólo sirven para identificar más de cerca los objetivos de negocio a alcanzar, sino también para identificar los recursos, tanto humanos como materiales, que pueden ser utilizados o necesarios durante el transcurso del proyecto.
 
-#### Organization
-* Develop organizational charts identifying divisions, departments, and project groups. The chart should also identify managers’ names and responsibilities
-* Identify key persons in the business and their roles
-* Identify an internal sponsor (financial sponsor and primary user/domain expert)
-* Indicate if there is a steering committee and list members
-* Identify the business units which are affected by the data mining project (e.g., Marketing, Sales, Finance)
+#### Organización
+* Desarrollar organigramas que identifiquen las divisiones, departamentos y grupos de proyectos. El organigrama también debe identificar los nombres y responsabilidades de los gerentes
+* Identificar a las personas claves y sus roles
+* Identificar un patrocinador interno (patrocinador financiero y usuario principal/experto en el dominio)
+* Indicar si existe un comité directivo y hacer una lista de sus miembros
+* Identificar las unidades de negocio afectadas por el proyecto de minería de datos (por ejemplo, marketing, ventas, finanzas)
 
-#### Problem area
-* Identify the problem area (e.g., marketing, customer care, business development, etc.)
-* Describe the problem in general terms
-* Check the current status of the project (e.g., Check if it is already clear within the business unit that a data mining project is to be performed, or whether data mining needs to be promoted as a key technology in the business)
-* Clarify prerequisites of the project (e.g., What is the motivation of the project? Does the business already use data mining?)
-* If necessary, prepare presentations and present data mining to the business
-* Identify target groups for the project result (e.g., Are we expected to deliver a report for top management or an operational system to be used by naive end users?)
-* Identify the users’ needs and expectations
+#### Problemática
+* Identificar el área del problema (por ejemplo, marketing, atención al cliente, desarrollo de negocios, etc.)
+* Describir el problema en términos generales
+* Comprobar el estado actual del proyecto (por ejemplo, comprobar si ya está claro dentro de la unidad de negocio que se va a realizar un proyecto de minería de datos, o si es necesario promover la minería de datos como una tecnología clave en el negocio).
+* Aclarar los requisitos previos del proyecto (por ejemplo, ¿cuál es la motivación del proyecto? ¿El negocio ya utiliza la minería de datos?)
+* Si es necesario, preparar presentaciones sobre la minería de datos a la empresa
+* Identificar el grupo objetivo para el producto final (por ejemplo, ¿Se espera que entreguemos un informe para la alta gerencia o un sistema para ser utilizado por usuarios inexpertos?)
+* Identificar las necesidades y expectativas de los usuarios
 
-#### Current solution
-* Describe any solution currently used to address the problem
-* Describe the advantages and disadvantages of the current solution and the level to which it is accepted by the users
+#### Soluciones existentes
+* Describir cualquier solución que se utilice actualmente para tratar el problema
+* Describir las ventajas y desventajas de la solución actual y el nivel de aceptación por parte de los usuarios.
 
-### Business Objectives
-Describe the customer’s primary objective, from a business perspective. In addition to the primary business objective, there are typically a large number of related business questions that the customer would like to address. For example, the primary business goal might be to keep current customers by predicting when they are prone to move to a competitor, while a secondary business objective might be to determine whether lower fees affect only one particular segment of customers.
+### Objetivos del negocio
+Describir el objetivo principal del cliente, desde una perspectiva de negocio. Además del objetivo principal del negocio, normalmente hay un gran número de preguntas comerciales relacionadas que el cliente desea abordar. Por ejemplo, el objetivo principal del negocio podría ser mantener a los clientes actuales mediante la predicción de cuándo son propensos a pasarse a la competencia, mientras que un objetivo secundario del negocio podría ser determinar si las tarifas más bajas afectan sólo a un segmento particular de clientes.
 
-* Informally describe the problem to be solved
-* Specify all business questions as precisely as possible
-* Specify any other business requirements (e.g., the business does not want to lose any customers)
-* Specify expected benefits in business terms
-* **Beware of setting unattainable goals --- make them as realistic as possible.**
+* Describir brevemente el problema a resolver
+* Especificar todas las preguntas de negocio con la mayor precisión posible
+* Especificar cualquier otro requisito del negocio (por ejemplo, el negocio no quiere perder ningún cliente).
+* Especificar los beneficios esperados en términos de negocio
+* **Tenga cuidado en fijar metas inalcanzables, hágalas lo más realistas posible**
 
-### Business Success Criteria
-Describe the criteria for a successful or useful outcome to the project from the business point of view. This might be quite specific and readily measurable, such as reduction of customer churn to a certain level, or general and subjective, such as “give useful insights into the relationships.” In the latter case, be sure to indicate who would make the subjective judgment.
+### Criterios de éxito del negocio
+Describir los criterios para un resultado exitoso o útil del proyecto desde el punto de vista empresarial. Esto podría ser bastante específico y fácilmente medible, como la reducción de la rotación de clientes a un cierto nivel, o general y subjetivo, como "dar una visión útil de las relaciones". En este último caso, asegúrese de indicar quién haría el juicio subjetivo.
 
-* Specify business success criteria (e.g., Improve response rate in a mailing campaign by 10 percent and sign-up rate by 20 percent)
-* Identify who assesses the success criteria  
+* Especificar los criterios de éxito del negocio (por ejemplo, mejorar la tasa de respuesta en una campaña de correo en un 10 por ciento y la tasa de registro en un 20 por ciento).
+* Identificar quién evalúa los criterios de éxito  
 
-**Each of the success criteria should relate to at least one of the specified business objectives.**  
+**Cada uno de los criterios de éxito debe estar relacionado con al menos uno de los objetivos de negocio especificados**
 
-Before starting the situation assessment, you might analyze previous experiences of this problem --- either internally, using CRISP-DM, or externally, using pre-packaged solutions.
+Antes de comenzar la evaluación de la situación, usted podría analizar experiencias previas de este problema, ya sea internamente, usando CRISP-DM, o externamente, usando soluciones pre-empaquetadas.
 
-## Assess Situation
-This task involves more detailed fact-finding about all of the resources, constraints, assumptions, and other factors that should be considered in determining the data analysis goal and in developing the project plan.
+## Evaluación de la situación
+Esta tarea implica una investigación más detallada sobre todos los recursos, limitaciones, suposiciones y otros factores que deben ser considerados al determinar la meta del análisis de datos y al desarrollar el plan del proyecto.
 
-### Inventory of Resources
-List the resources available to the project, including personnel (business and data experts, technical support, data mining experts), data (fixed extracts, access to live warehoused or operational data), computing resources (hardware platforms), and software (data mining tools, other relevant software).  
+### Inventario de recursos
+Enumere los recursos disponibles para el proyecto, incluyendo el personal (expertos en negocios y datos, apoyo técnico, expertos en minería de datos), datos (acceso a datos operativos o almacenados), recursos informáticos (plataformas de hardware) y software (herramientas de minería de datos, otro software relevante).  
 
-#### Hardware Resources
-* Identify the base hardware
-* Establish the availability of the base hardware for the data mining project
-* Check if the hardware maintenance schedule conflicts with the availability of the hardware for the data mining project
-* Identify the hardware available for the data mining tool to be used (if the tool is known at this stage)
+#### Recursos de hardware
+* Identificar el hardware base
+* Establecer la disponibilidad del hardware para el proyecto de minería de datos.
+* Comprobar si el cronograma de mantenimiento del hardware entra en conflicto con la disponibilidad para el proyecto de minería de datos.
 
-#### Sources of Data and Knowledge
-* Identify data sources
-* Identify type of data sources (online sources, experts, written documentation, etc.)
-* Identify knowledge sources
-* Identify type of knowledge sources (online sources, experts, written documentation, etc.)
-* Check available tools and techniques
-* Describe the relevant background knowledge (informally or formally)
+#### Fuentes de datos y conocimientos
+* Identificar las fuentes de datos
+* Identificar el tipo de fuentes de datos (fuentes en línea, expertos, documentación escrita, etc.)
+* Identificar las fuentes de conocimientos
+* Identificar el tipo de fuentes de conocimiento (fuentes en línea, expertos, documentación escrita, etc.)
+* Revisar las herramientas y técnicas disponibles
+* Describir los conocimientos previos (de manera formal o informal)
 
-#### Personnel Sources
-* Identify project sponsor (if different from internal sponsor as in [Organization])
-* Identify system administrator, database administrator, and technical support staff for further questions
-* Identify market analysts, data mining experts, and statisticians, and check their availability
-* Check availability of domain experts for later phases
+#### Recursos humanos
+* Identificar el patrocinador del proyecto (si es diferente del patrocinador interno como en [Organización])
+* Identificar al administrador del sistema, al administrador de la base de datos y al personal de soporte técnico para preguntas adicionales.
+* Identificar a los analistas de mercado, expertos en minería de datos y estadísticos, y verificar su disponibilidad.
+* Comprobar la disponibilidad de los expertos de dominio para las fases siguientes.
 
-Remember that the project may need technical staff at odd times throughout the project, for example during data transformation.
+Recuerde que se puede necesitar personal técnico en momentos puntuales durante todo el proyecto, por ejemplo, durante la transformación de datos.
 
-### Requirements, Assumptions, and Constraints
-List all requirements of the project, including schedule of completion, comprehensibility, and quality of results and security, as well as legal issues. As part of this output, make sure that you are allowed to use the data.
+### Requisitos, suposiciones y restricciones
+*Enumerar todos los requisitos del proyecto, incluyendo el cronograma de finalización, la comprensibilidad, la calidad de los resultados y la seguridad, así como los aspectos legales
 
-List the assumptions made by the project. These may be assumptions about the data, which can be verified during data mining, but may also include non-verifiable assumptions related to the project. It is particularly important to list the latter if they will affect the validity of the results.
+*Listar las suposiciones hechas por el proyecto. Estos pueden ser supuestos sobre los datos, que pueden ser verificados durante la minería de datos, pero también pueden incluir supuestos no verificables relacionados con el proyecto. Es particularmente importante enumerar estos últimos si afectan a la validez de los resultados.
 
-List the constraints made on the project. These constraints might involve lack of resources to carry out some of the tasks in the project in the time required, or there may be legal or ethical constraints on the use of the data or the solution needed to carry out the data mining task.
+*Enumerar las limitaciones del proyecto. Estas limitaciones pueden incluir la falta de recursos para llevar a cabo algunas de las tareas del proyecto en el tiempo requerido, o pueden existir limitaciones legales o éticas en el uso de los datos o de la solución necesaria para llevar a cabo la tarea de minería de datos.
 
-#### Requirements
-* Specify target group profile
-* Capture all requirements on scheduling
-* Capture requirements on comprehensibility, accuracy, deploy ability, maintainability, and repeatability of the data mining project and the resulting model(s)
-* Capture requirements on security, legal restrictions, privacy, reporting, and project schedule 
+#### Requisitos
+* Especificar el perfil del grupo objetivo
+* Capturar todos los requisitos 
+* Capturar los requisitos de comprensibilidad, precisión, despliegue, mantenimiento y reproducibilidad del proyecto de minería de datos y de los modelos resultantes.
+* Capturar los requisitos de seguridad, restricciones legales, privacidad, informes y calendario del proyecto. 
 
-#### Assumptions
-* Clarify all assumptions (including implicit ones) and make them explicit (e.g., to address the business question, a minimum number of customers with age above 50 is necessary)
-* List assumptions on data quality (e.g., accuracy, availability)
-* List assumptions on external factors (e.g., economic issues, competitive products, technical advances)
-* Clarify assumptions that lead to any of the estimates (e.g., the price of a specific tool is assumed to be lower than $1,000)
-* List all assumptions regarding whether it is necessary to understand and describe or explain the model (e.g., how should the model and results be presented to senior management/sponsor)  
+#### Suposiciones
+* Aclarar todas las suposiciones (incluidas las implícitas) y hacerlas explícitas (por ejemplo, para abordar la cuestión empresarial, es necesario un número mínimo de clientes con más de 50 años de edad).
+* Listar las suposiciones sobre la calidad de los datos (por ejemplo, exactitud, disponibilidad)
+* Listar las suposiciones sobre factores externos (por ejemplo, cuestiones económicas, productos de la competencia)
+* Aclarar las suposiciones que conducen a cualquier  estimación (por ejemplo, se supone que el precio de una herramienta específica es inferior a 1.000 dólares).
+* Listar todas las suposiciones con respecto a si es necesario entender, describir o explicar el modelo (por ejemplo, cómo se debe presentar el modelo y los resultados a la alta gerencia/patrocinador).  
 
-**The list of assumptions also includes assumptions at the beginning of the project, i.e., what the starting point of the project has been.**
+**La lista de suposiciones también incluye las suposiciones iniciales del proyecto**
 
-#### Constraints
-* Check general constraints (e.g., legal issues, budget, timescales, and resources)
-* Check access rights to data sources (e.g., access restrictions, password required)
-* Check technical accessibility of data (operating systems, data management system, file or database format)
-* Check whether relevant knowledge is accessible
-* Check budget constraints (fixed costs, implementation costs, etc.)
+#### Restricciones
+* Revisar las restricciones generales (por ejemplo, cuestiones legales, presupuesto, plazos y recursos).
+* Revisar el acceso a las fuentes de datos (por ejemplo, restricciones de acceso, contraseña requerida).
+* Revisar la accesibilidad técnica de los datos (sistemas operativos, sistema de gestión de datos, formato de archivo o base de datos).
+* Comprobar las restricciones de presupuesto (costes fijos, costes de ejecución, etc.)
 
-### Risks and Contingencies
-List the risks, that is, the events that might occur, impacting schedule, cost, or result. List the corresponding contingency plans: what action will be taken to avoid or minimize the impact or recover from the occurrence of the foreseen risks.
+### Riesgos y Contingencias
+Enumere los riesgos, es decir, los eventos que pueden ocurrir, que impactan el cronograma, el costo o el resultado. Enumerar los correspondientes planes de contingencia.
+#### Identificar los riesgos
+* Identificar los riesgos del negocio (por ejemplo, la competencia obtiene primero mejores resultados).
+* Identificar los riesgos organizacionales (por ejemplo, el departamento que solicita el proyecto no tiene fondos para el proyecto).
+* Identificar los riesgos financieros (por ejemplo, el financiamiento de las siguientes etapas depende de los resultados iniciales de la minería de datos).
+* Identificar los riesgos técnicos
+* Identificar los riesgos que dependen de los datos y de las fuentes de datos (por ejemplo, mala calidad).
 
-#### Identify Risks
-* Identify business risks (e.g., competitor comes up with better results first)
-* Identify organizational risks (e.g., department requesting project doesn’t have funding for the project)
-* Identify financial risks (e.g., further funding depends on initial data mining results)
-* Identify technical risks
-* Identify risks that depend on data and data sources (e.g., poor quality and coverage)
+#### Desarrollar planes de contingencia
+* Determinar las condiciones bajo las cuales cada riesgo puede ocurrir
+* Desarrollar planes de contingencia
 
-#### Develop Contingency Plans
-* Determine conditions under which each risk may occur
-* Develop contingency plans
+### Terminología
+Elaborar un glosario de terminología relevante para el proyecto. Esto debe incluir al menos dos componentes:  
 
-### Terminology
-Compile a glossary of terminology relevant to the project. This should include at least two components:  
+1. Un glosario de terminología empresarial relevante, que forma parte del entendimiento empresarial disponible para el proyecto.
+2. Un glosario de terminología de minería de datos, ilustrado con ejemplos relevantes para el problema empresarial en cuestión.  
 
-1. A glossary of relevant business terminology, which forms part of the business understanding available to the project
-2. A glossary of data mining terminology, illustrated with examples relevant to the business problem in question  
+* Verificar la existencia de glosarios previos; de lo contrario, comenzar a redactarlos.
+* Hablar con los expertos de dominio para entender su terminología
+* Familiarizarse con la terminología del negocio
 
-* Check prior availability of glossaries; otherwise begin to draft glossaries
-* Talk to domain experts to understand their terminology
-* Become familiar with the business terminology
+### Beneficios y costos
+Preparar un análisis de costo-beneficio para el proyecto, comparando los costos del proyecto con los beneficios potenciales para el negocio si es exitoso.
 
-### Costs and Benefits
-Prepare a cost-benefit analysis for the project, comparing the costs of the project with the potential benefits to the business if it is successful.
+* Estimar los costos de la recolección de datos
+* Estimar los costos de desarrollo e implementación de una solución
+* Identificar los beneficios (por ejemplo, la mejora de la satisfacción del cliente, el retorno de la inversión y el aumento de los ingresos).
+* Estimar los costos operativos
 
-* Estimate costs for data collection
-* Estimate costs of developing and implementing a solution
-* Identify benefits (e.g., improved customer satisfaction, ROI, and increase in revenue)
-* Estimate operating costs  
+La comparación debe ser lo más específica posible, ya que esto permite presentar una mejor propuesta de negocio.  
 
-The comparison should be as specific as possible, as this enables a better business case to be made.  
+**Recuerde identificar los costos ocultos, tales como la extracción y preparación repetida de datos, los cambios en los flujos de trabajo y el tiempo requerido para la capacitación.**
 
-**Remember to identify hidden costs, such as repeated data extraction and preparation, changes in workflows, and time required for training.**
+## Determinar los objetivos de la minería de datos
+Una meta empresarial establece los objetivos en la terminología empresarial; una meta de minería de datos establece los objetivos del proyecto en términos técnicos. Por ejemplo, el objetivo empresarial podría ser, "Aumentar las ventas de catálogos a clientes existentes", mientras que el objetivo de la minería de datos podría ser, "Predecir cuántos productos comprará un cliente, dadas sus compras en los últimos tres años, la información demográfica relevante y el precio del artículo".
 
-## Determine Data Mining Goals
-A business goal states objectives in business terminology; a data mining goal states project objectives in technical terms. For example, the business goal might be, “Increase catalog sales to existing customers,” while a data mining goal might be, “Predict how many widgets a customer will buy, given their purchases over the past three years, relevant demographic information, and the price of the item.”
+### Objetivos de la minería de datos
+Describe los resultados previstos del proyecto que permitan alcanzar los objetivos de negocio. Tenga en cuenta que normalmente se trata de mensajes técnicos.
 
-### Data Mining Goals
-Describe the intended outputs of the project that enable the achievement of the business objectives. Note that these are normally technical outputs.
+* Traducir las preguntas de negocio a objetivos de minería de datos (por ejemplo, una campaña de marketing requiere la segmentación de los clientes para decidir a quién dirigirse en esta campaña; se debe especificar el nivel/tamaño de los segmentos).
+* Especificar el tipo de problema de minería de datos (por ejemplo, clasificación, descripción, predicción y agrupación). Para más detalles sobre los tipos de problemas de minería de datos, véase el Apéndice 2.
 
-* Translate the business questions to data mining goals (e.g., a marketing campaign requires segmentation of customers in order to decide whom to approach in this campaign; the level/size of the segments should be specified).
-* Specify data mining problem type (e.g., classification, description, prediction, and clustering). For more details about data mining problem types, see Appendix 2.
+### Criterios de éxito para la minería de datos
+Definir los criterios para un resultado exitoso del proyecto en términos técnicos, por ejemplo, un cierto nivel de precisión predictiva o un perfil de propensión a la compra con un determinado grado de "elevación". Al igual que con los criterios de éxito empresarial, puede ser necesario describirlos en términos subjetivos, en cuyo caso se debe identificar a la persona o personas que hacen el juicio subjetivo.
 
-It may be wise to re-define the problem. For example, modeling product retention rather than customer retention when targeting customer retention delivers results too late to affect the outcome.
+* Especificar los criterios para la evaluación del modelo (por ejemplo, la precisión, el rendimiento y la complejidad del modelo).
+* Definir 'benchmarks' para los criterios de evaluación
+* Especificar los criterios que se refieren a los criterios de evaluación subjetivos (por ejemplo, el modelo explica la capacidad y los datos y los conocimientos de marketing proporcionados por el modelo).
 
-### Data Mining Success Criteria
-Define the criteria for a successful outcome to the project in technical terms, for example a certain level of predictive accuracy or a propensity-to-purchase profile with a given degree of “lift.” As with business success criteria, it may be necessary to describe these in subjective terms, in which case the person or persons making the subjective judgment should be identified.
+**Recuerde que los criterios de éxito de la minería de datos son diferentes a los criterios de éxito del negocio definidos anteriormente.**
 
-* Specify criteria for model assessment (e.g., model accuracy, performance and complexity)
-* Define benchmarks for evaluation criteria
-* Specify criteria which address subjective assessment criteria (e.g., model explain ability and data and marketing insight provided by the model)
+Recuerde que es prudente planificar la implementación desde el inicio del proyecto.
 
-**Remember that the data mining success criteria are different than the business success criteria defined earlier.**
+## Generación del plan de proyecto
+Describa el plan previsto para alcanzar los objetivos de la minería de datos y, por lo tanto, para alcanzar los objetivos del negocio.
 
-Remember it is wise to plan for deployment from the start of the project.
+### Plan de proyecto
+Enumerar las etapas a ejecutar en el proyecto, junto con su duración, recursos requeridos, entradas, salidas y dependencias. Siempre que sea posible, explicite las iteraciones a gran escala en el proceso de minería de datos, por ejemplo, las repeticiones de las fases de modelado y evaluación. Como parte del plan del proyecto, también es importante analizar las dependencias entre el cronograma y los riesgos. Marque los resultados de estos análisis explícitamente en el plan del proyecto, idealmente con acciones y recomendaciones de acciones si los riesgos se manifiestan.
 
-## Produce Project Plan
-Describe the intended plan for achieving the data mining goals and thereby achieving the business goals.
+Aunque esta es la única tarea en la que se menciona directamente el plan del proyecto, debe ser consultado continuamente y revisado a lo largo de todo el proyecto. El plan de proyecto debe ser consultado como mínimo cada vez que se inicie una nueva tarea o se inicie una nueva iteración de una tarea o actividad.
 
-### Project Plan
-List the stages to be executed in the project, together with their duration, resources required, inputs, outputs, and dependencies. Wherever possible, make explicit the large-scale iterations in the data mining process— for example, repetitions of the modeling and evaluation phases. As part of the project plan, it is also important to analyze dependencies between time schedule and risks. Mark results of these analyses explicitly in the project plan, ideally with actions and recommendations for actions if the risks are manifested.
+* Definir el plan de proceso inicial y discutir la viabilidad con todo el personal involucrado.
+* Combinar todos los objetivos identificados y las técnicas seleccionadas en un procedimiento coherente que resuelva las cuestiones de negocio y cumpla con los criterios de éxito del negocio.
+* Estimar el esfuerzo y los recursos necesarios para lograr y desplegar la solución. (Es útil tener en cuenta la experiencia de otras personas al estimar las escalas de tiempo para los proyectos de minería de datos. Por ejemplo, a menudo se postula que entre el 50 y el 70 por ciento del tiempo y el esfuerzo de un proyecto de minería de datos se utiliza en la fase de preparación de datos y entre el 20 y el 30 por ciento en la fase de comprensión de datos, mientras que sólo entre el 10 y el 20 por ciento se gasta en cada una de las fases de modelado, evaluación y comprensión de negocios, y entre el 5 y el 10 por ciento en la fase de implementación).
+* Identificar los pasos críticos
+* Identificar los puntos de decisión
+* Identificar los puntos de revisión
+* Identificar las principales iteraciones
 
-Although this is the only task in which the project plan is directly named, it nevertheless should be consulted continually and reviewed throughout the project. The project plan should be consulted at minimum whenever a new task is started or a further iteration of a task or activity is begun.
+### Evaluación inicial de herramientas y técnicas
+Al final de la primera fase, el equipo del proyecto realiza una evaluación inicial de las herramientas y técnicas. Aquí, es importante seleccionar una herramienta de minería de datos que soporte varios métodos para diferentes etapas del proceso, ya que la selección de herramientas y técnicas puede influir en todo el proyecto.
 
-* Define the initial process plan and discuss the feasibility with all involved personnel
-* Combine all identified goals and selected techniques in a coherent procedure that solves the business questions and meets the business success criteria
-* Estimate the effort and resources needed to achieve and deploy the solution. (It is useful to consider other people’s experience when estimating timescales for data mining projects. For example, it is often postulated that 50-70 percent of the time and effort in a data mining project is used in the [Data Preparation] Phase and 20-30 percent in the [Data Understanding] Phase, while only 10-20 percent is spent in each of the [Modeling], [Evaluation], and [Business Understanding] Phases and 5-10 percent in the [Deployment] Phase.)
-* Identify critical steps
-* Mark decision points
-* Mark review points
-* Identify major iterations
+* Crear una lista de criterios de selección de herramientas y técnicas (o utilizar uno existente si está disponible).
+* Elegir herramientas y técnicas potenciales
+* Evaluar la idoneidad de las técnicas
+* Revisar y priorizar las técnicas aplicables de acuerdo a la evaluación de soluciones alternativas.
 
-### Initial Assessment of Tools and Techniques
-At the end of the first phase, the project team performs an initial assessment of tools and techniques. Here, it is important to select a data mining tool that supports various methods for different stages of the process, since the selection of tools and techniques may influence the entire project.
+# Comprensión de los datos
 
-* Create a list of selection criteria for tools and techniques (or use an existing one if available)
-* Choose potential tools and techniques
-* Evaluate appropriateness of techniques
-* Review and prioritize applicable techniques according to the evaluation of alternative solutions
+## Recopilación de datos iniciales
+Adquirir los datos (o acceso a los datos) listados en los recursos del proyecto. Esta recopilación inicial incluye la carga de datos, si es necesario para el análisis. Por ejemplo, si tiene la intención de utilizar una herramienta específica para el análisis de datos, es lógico cargarlos en esta herramienta.
 
-# Data Understanding
+### Informe inicial de recopilación de datos
+Describa todos los datos utilizados para el proyecto e incluya cualquier requisito de selección para obtener datos más detallados. El informe de recopilación de datos también debe definir si algunos atributos son relativamente más importantes que otros.
 
-## Collect Initial Data
-Acquire the data (or access to the data) listed in the project resources. This initial collection includes data loading, if necessary for data understanding. For example, if you intend to use a specific tool for data understanding, it is logical to load your data into this tool.
-
-### Initial Data Collection Report
-Describe all the various data used for the project, and include any selection requirements for more detailed data. The data collection report should also define whether some attributes are relatively more important than others.
-
-Remember that any assessment of data quality should be made not just of the individual data sources but also of any data that results from merging data sources. Because of inconsistencies between the sources, merged data may present problems that do not exist in the individual data sources.
+Recuerde que cualquier evaluación de la calidad de los datos debe hacerse no sólo de las fuentes de datos individuales, sino también de cualquier dato que resulte de la fusión entre fuentes de datos. Debido a las inconsistencias entre las fuentes, los datos fusionados pueden presentar problemas que no existen en las fuentes de datos individuales.
 
 #### Data requirements planning
 * Plan which information is needed (e.g., only for given attributes, or specific additional information)
